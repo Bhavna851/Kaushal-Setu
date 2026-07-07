@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaushal Setu</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        /* Top Utility Bar */
+        .top-bar {
+            background: #111827;
+            color: white;
+            padding: 8px 40px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar span {
+            opacity: 0.9;
+        }
+
+        /* Main Header */
+        .header {
+            background: #0b3d82;
+            color: white;
+            padding: 16px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b3d82;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        /* Right Side Buttons */
+        .nav-buttons {
+            display: flex;
+            gap: 14px;
+        }
+
+        .btn {
+            padding: 11px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .login-btn {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .login-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .signup-btn {
+            background: white;
+            color: #0b3d82;
+        }
+
+        .signup-btn:hover {
+            background: #e8eef8;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 50px 25px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            border-radius: 18px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            border: 1px solid #dbe4f0;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e8f0fb;
+            color: #0b3d82;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: #0b3d82;
+        }
+
+        .hero-description {
+            margin-top: 20px;
+            font-size: 17px;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            background: #0b57b3;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #084894;
+        }
+
+        .secondary-btn {
+            border: 1px solid #0b57b3;
+            color: #0b57b3;
+        }
+
+        .secondary-btn:hover {
+            background: #eef4fd;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 85%;
+            max-width: 420px;
+        }
+
+        /* Features Section */
+        .features {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid #d8e2ef;
+            transition: 0.3s ease;
+            min-height: 270px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 24px rgba(11, 61, 130, 0.12);
+        }
+
+        .feature-card img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            margin: 0 auto 18px;
+        }
+
+        .feature-card h3 {
+            color: #0b3d82;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: #4b5563;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 70px;
+            background: #dfe7f2;
+            text-align: center;
+            padding: 28px;
+            font-size: 14px;
+            color: #374151;
+            border-top: 1px solid #c9d4e2;
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media(max-width: 1100px) {
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 35px 25px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>Government of India | PM Internship Scheme</span>
+        <span>Empowering Students Through Digital Opportunities</span>
+    </div>
+
+    <!-- Main Header -->
+    <div class="header">
+
+        <div class="header-left">
+            <div class="logo">K</div>
+
+            <div>
+                <div class="header-title">Kaushal Setu</div>
+                <div class="header-subtitle">Bridging Students Skills with Internship Opportunities</div>
+            </div>
+        </div>
+
+        <!-- Right Side Login Signup -->
+        <div class="nav-buttons">
+            <a href="{{ url_for('main.login') }}" class="btn login-btn">Login</a>
+            <a href="{{ url_for('main.signup') }}" class="btn signup-btn">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <div class="hero">
+
+            <div class="hero-text">
+
+                <div class="badge">Kaushal Setu</div>
+
+                <div class="hero-title">
+                    <div class="hero-title">
+                        Welcome to Kaushal Setu
+                    </div>
+                </div>
+
+                <div class="hero-description">
+                    Kaushal Setu is a smart internship recommendation platform developed to help students discover
+                    relevant internship opportunities based on their educational qualifications, technical skills, and
+                    preferred location. The system matches student profiles with suitable internships and provides
+                    direct access to official application portals through a simple, secure, and user-friendly interface.
+                </div>
+
+                <!-- <div class="hero-buttons">
+                    <a href="{{ url_for('main.signup') }}" class="hero-btn primary-btn">Get Started</a>
+
+                    <a href="{{ url_for('main.login') }}" class="hero-btn secondary-btn">Login</a>
+               </div>-->
+            </div>
+
+            <div class="hero-image">
+                <img src="https://img.freepik.com/premium-vector/diverse-team-collaborating-around-laptop-flat-vector-style_876875-98.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="Internship Illustration">
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+
+            <div class="feature-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png" alt="AI Recommendation">
+                <h3>Smart Recommendations</h3>
+                <p>
+                    Recommends suitable internships by matching a student's education,
+                    technical skills, and preferred location with available opportunities.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Easy Interface">
+                <h3>Resume-based profile </h3>
+                <p>
+                    Allows students to upload their resume and maintain a complete profile
+                    for faster and more accurate internship recommendations.
+            </div>
+
+            <div class="feature-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/1040/1040232.png" alt="Connectivity">
+                <h3>Verified Internship Listings</h3>
+                <p>
+                    Displays internships from official company career portals and trusted
+                    recruitment platforms with direct application links.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Students">
+                <h3>Simple & User-Friendly</h3>
+                <p>
+                    Clean, responsive, and easy-to-use interface that helps students explore,
+                    apply, and manage internship opportunities with ease.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <strong>Kaushal Setu - Internship Recommendation Portal</strong><br>
+        Developed as an academic project to help students discover internship opportunities through profile-based
+        matching.
+    </div>
+</body>
+
+</html>
